@@ -13,7 +13,7 @@ int main()
   
   for(i = 0; i < tokenAmount; i++)
     {
-      cout << "Enter expression token by token (ex: '1' '+' '1')" << endl;
+      cout << "Enter expression token by token, no spaces (ex: '1+1') " << endl;
       cin >> getToken;
       s.push(getToken);
     }
