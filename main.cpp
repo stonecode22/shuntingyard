@@ -1,26 +1,23 @@
-#include<iostream>
-#include<cstring>
-#include"stack.h"
-using namespace std;
+#include"shunt.h"
 
 int main()
 {
-  int i, tokenAmount;
-  char getToken;
-  struct Stack s;
-  cout << "How many tokens are in your expression?" << endl;
-  cin >> tokenAmount;
-  
-  for(i = 0; i < tokenAmount; i++)
+  stack stk;
+  int number = 0;
+  char command;
+  cout << "So far, just a stack:\n";
+  do
     {
-      cout << "Enter expression token by token, no spaces (ex: '1+1') " << endl;
-      cin >> getToken;
-      s.push(getToken);
-    }
-  for(i = 0; i < tokenAmount; i++)
-    {
-      cout << s.pop() << " popped. ";
-    }
+      cout << "Enter a number you wish to put into the stack: ";
+      cin >> number;
+      stk.push(number);
+      cout << endl;
+      cout << "Display:\n";
+      stk.display();
+      cout << "\nWish to continue? (y/n)\n";
+      cin >> command;
+    }while(command != 'n');
+  cout << "Last display:\n";
+  stk.display();
   return 0;
 }
-
