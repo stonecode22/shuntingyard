@@ -78,12 +78,7 @@ int stack::display()
     {
       node* temp;
       temp = top;
-
-      if(temp != NULL)
-	{
-	  cout << temp->data << endl;
-	}
-      while(temp->next != NULL)
+      while(temp != NULL)
 	{
 	  cout << temp->data << endl;
 	  temp = temp->next;
